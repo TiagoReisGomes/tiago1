@@ -1,0 +1,81 @@
+body {
+            background: linear-gradient(45deg, #ff00ff, #ff4500, #ffff00, #00ff00, #00ffff, #0000ff, #8a2be2);
+            background-size: 400% 400%;
+            animation: psychedelic 10s infinite linear;
+            display: flex;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+}
+@keyframes psychedelic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: spin 5s linear infinite, pulse 1.5s ease-in-out infinite alternate;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: spin 3s linear infinite, pulse2 0.5s alternate infinite, orbit 4s linear infinite;
+} 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse2 {
+    0% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+} 
+h2 {
+    font-size: 3rem;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.explode span {
+    position: absolute;
+    font-size: 3rem;
+    animation: explode 0.8s forwards ease-out;
+}
+
+@keyframes explode {
+    to {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
+@keyframes quicar {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-20px); }
+    50% { transform: translateY(0); }
+    70% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    animation: quicar 1s infinite;
+}
